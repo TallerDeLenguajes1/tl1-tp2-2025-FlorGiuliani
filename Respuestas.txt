@@ -1,0 +1,22 @@
+* f) Inspeccione la carpeta donde inicializó el repositorio:
+
+● ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+
+    No puedo verlo porque ese archivo fue creado en la rama Opcion_2 y ahora cambie de rama
+
+
+● En la rama main agregue un nuevo archivo que se llame Respuestas.txt y realice un commit para agregar este archivo al repositorio.
+
+● En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+
+    Veo que el trazo que mostraba el avance de mis commits se dividió en 2: la rama Opcion_2 quedo como un desvio a la derecha y el último commit siguió el trazo derecho inicial
+
+● En el Branch main se va a combinar (merge) ambos repositorios. Para esto, utilice el siguiente comando: 
+
+    o git merge Opcion_2 -m "merge Opcion_2" → combinamos main con Opcion_2
+
+● En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota?
+
+    Veo que ahora los dos trazos que se habian formado se unen en el último commit
+
+● En el archivo respuestas.txt escriba las respuestas a las preguntas anteriores
