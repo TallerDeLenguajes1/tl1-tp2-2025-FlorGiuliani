@@ -15,15 +15,18 @@ struct compu
     char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres)
 } typedef compu;
 
+void listarPCs(struct compu pcs[], int cantidad);
+
 
 int main()
 {
     srand(time(NULL));
 
-    char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core",
-        "Pentium"};
+    char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
         
     // b. Generación de Datos Aleatorios
+    // c. Almacenamiento de Datos
+
     compu listaCompus[N];
     for (int i = 0; i < N; i++)
     {
@@ -35,6 +38,24 @@ int main()
 
         listaCompus[i].tipo_cpu = &(tipos[rand()%6][0]);
     }
-    
 
+    void listarPCs(listaCompus, N);
+    
+    return 0;
+}
+
+// d. Funciones a Implementar
+
+void listarPCs(struct compu pcs[], int cantidad)
+{
+    printf("---LISTA DE COMPUTADORAS---");
+    for (int i = 0; i < cantidad; i++)
+    {
+        printf("\no Computadora numero %d", i+1);
+        printf("\n Velocidad: %d", pcs[i].velocidad);
+        printf("\nAnio: %d", pcs[i].anio);
+        printf("\nCantidad de nucleos: %d", pcs[i].cantidad_nucleos);
+        printf("\nTipo: ");
+    }
+    
 }
