@@ -17,6 +17,7 @@ typedef struct
 
 void listarPCs(compu pcs[], int cantidad);
 void mostrarMasVieja(compu pcs[], int cantidad);
+void mostrarMasVeloz(compu pcs[], int cantidad);
 
 
 int main()
@@ -41,6 +42,7 @@ int main()
     
     listarPCs(listaCompus,N);
     mostrarMasVieja(listaCompus,N);
+    mostrarMasVeloz(listaCompus,N);
     
     return 0;
 }
@@ -67,6 +69,7 @@ void mostrarMasVieja(compu pcs[], int cantidad)
     for (int i = 0; i < cantidad; i++)
     {
         if (pcs[i].anio < anioMenor) {
+            anioMenor = pcs[i].anio;
             masVieja = i;
         }
     }
@@ -79,4 +82,9 @@ void mostrarMasVieja(compu pcs[], int cantidad)
     printf("\nTipo: ");
     puts(pcs[masVieja].tipo_cpu);
     printf("\n");  
+}
+
+void mostrarMasVeloz(compu pcs[], int cantidad)
+{
+    
 }
