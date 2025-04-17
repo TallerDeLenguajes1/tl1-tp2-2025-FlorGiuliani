@@ -81,10 +81,24 @@ void mostrarMasVieja(compu pcs[], int cantidad)
     printf("\nCantidad de nucleos: %d", pcs[masVieja].cantidad_nucleos);
     printf("\nTipo: ");
     puts(pcs[masVieja].tipo_cpu);
-    printf("\n");  
 }
 
 void mostrarMasVeloz(compu pcs[], int cantidad)
 {
-    
+    int masVeloz, velocidadMayor = 0;
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].velocidad > velocidadMayor) {
+            velocidadMayor = pcs[i].velocidad;
+            masVeloz = i;
+        }
+    }
+
+    printf("\n\n---LA COMPUTADORA MAS RAPIDA---\n");
+    printf("\no Computadora numero %d", masVeloz+1);
+    printf("\nVelocidad: %d", pcs[masVeloz].velocidad);
+    printf("\nAnio: %d", pcs[masVeloz].anio);
+    printf("\nCantidad de nucleos: %d", pcs[masVeloz].cantidad_nucleos);
+    printf("\nTipo: ");
+    puts(pcs[masVeloz].tipo_cpu);
 }
