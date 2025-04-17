@@ -16,6 +16,7 @@ typedef struct
 } compu;
 
 void listarPCs(compu pcs[], int cantidad);
+void mostrarMasVieja(compu pcs[], int cantidad);
 
 
 int main()
@@ -37,8 +38,9 @@ int main()
         listaCompus[i].cantidad_nucleos = 1 + rand()%8;
         listaCompus[i].tipo_cpu = &(tipos[rand()%6][0]);
     }
-
+    
     listarPCs(listaCompus,N);
+    mostrarMasVieja(listaCompus,N);
     
     return 0;
 }
@@ -56,6 +58,25 @@ void listarPCs(compu pcs[], int cantidad)
         printf("\nCantidad de nucleos: %d", pcs[i].cantidad_nucleos);
         printf("\nTipo: ");
         puts(pcs[i].tipo_cpu);
-        printf("\n");
     }   
+}
+
+void mostrarMasVieja(compu pcs[], int cantidad)
+{
+    int masVieja, anioMenor = 3000;
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (pcs[i].anio < anioMenor) {
+            masVieja = i;
+        }
+    }
+
+    printf("\n\n---LA COMPUTADORA MAS VIEJA---\n");
+    printf("\no Computadora numero %d", masVieja+1);
+    printf("\nVelocidad: %d", pcs[masVieja].velocidad);
+    printf("\nAnio: %d", pcs[masVieja].anio);
+    printf("\nCantidad de nucleos: %d", pcs[masVieja].cantidad_nucleos);
+    printf("\nTipo: ");
+    puts(pcs[masVieja].tipo_cpu);
+    printf("\n");  
 }
