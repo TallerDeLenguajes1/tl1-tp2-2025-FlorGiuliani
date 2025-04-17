@@ -7,15 +7,15 @@
 
 // a. Definición de la Estructura de Datos
 
-struct compu
+typedef struct
 {
     int velocidad; // Velocidad de procesamiento en GHz (valor entre 1 y 3)
     int anio; // Año de fabricación (valor entre 2015 y 2024)
     int cantidad_nucleos; // Cantidad de núcleos (valor entre 1 y 8)
     char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres)
-} typedef compu;
+} compu;
 
-void listarPCs(struct compu pcs[], int cantidad);
+void listarPCs(compu pcs[], int cantidad);
 
 
 int main()
@@ -35,27 +35,27 @@ int main()
         listaCompus[i].velocidad = 1 + rand()%3;
         listaCompus[i].anio = 2015 + rand()%(2024-2015);
         listaCompus[i].cantidad_nucleos = 1 + rand()%8;
-
         listaCompus[i].tipo_cpu = &(tipos[rand()%6][0]);
     }
 
-    void listarPCs(listaCompus, N);
+    listarPCs(listaCompus,N);
     
     return 0;
 }
 
 // d. Funciones a Implementar
 
-void listarPCs(struct compu pcs[], int cantidad)
+void listarPCs(compu pcs[], int cantidad)
 {
-    printf("---LISTA DE COMPUTADORAS---");
+    printf("---LISTA DE COMPUTADORAS---\n");
     for (int i = 0; i < cantidad; i++)
     {
         printf("\no Computadora numero %d", i+1);
-        printf("\n Velocidad: %d", pcs[i].velocidad);
+        printf("\nVelocidad: %d", pcs[i].velocidad);
         printf("\nAnio: %d", pcs[i].anio);
         printf("\nCantidad de nucleos: %d", pcs[i].cantidad_nucleos);
         printf("\nTipo: ");
-    }
-    
+        puts(pcs[i].tipo_cpu);
+        printf("\n");
+    }   
 }
